@@ -15,6 +15,8 @@ body {
   background-image:
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420'%3E%3Cg fill='none' stroke='%2342f305' stroke-opacity='0.055' stroke-width='2'%3E%3Cpolygon points='174.7,136.8 136.8,174.7 83.2,174.7 45.3,136.8 45.3,83.2 83.2,45.3 136.8,45.3 174.7,83.2'/%3E%3Crect x='258' y='52' width='116' height='80'/%3E%3Cline x1='258' y1='78' x2='374' y2='78'/%3E%3Cline x1='258' y1='104' x2='374' y2='104'/%3E%3Ccircle cx='105' cy='318' r='54'/%3E%3Cpolygon points='306,252 368,360 244,360'/%3E%3C/g%3E%3C/svg%3E"),
     radial-gradient(1100px 520px at 50% -8%, rgba(66,243,5,0.07), transparent 60%);
+  /* tile scales down on small screens so phones see the whole pattern, not one giant shape */
+  background-size: min(420px, 58vw) min(420px, 58vw), auto;
   color: var(--text);
   font-family: 'Inter', -apple-system, Helvetica, Arial, sans-serif;
   line-height: 1.6;
