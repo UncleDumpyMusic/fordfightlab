@@ -1,16 +1,20 @@
 /* Ford Fight Lab — shared styles */
 :root {
-  --bg: #101114;
-  --panel: #1a1c21;
-  --line: #2a2d34;
-  --text: #e8e6e1;
-  --muted: #9a9890;
-  --red: #e2352b;
-  --gold: #d9a441;
+  --bg: #0b0d0a;
+  --panel: #14170f;
+  --line: #24301c;
+  --text: #eef2ea;
+  --muted: #9aa392;
+  --red: #42f305;   /* brand green — sampled from the FORD logo */
+  --gold: #9df06b;  /* light green — secondary accent */
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-  background: var(--bg);
+  background-color: var(--bg);
+  /* fight-area pattern: boxing ring, octagon, circle, bare-knuckle triangle */
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='420' height='420'%3E%3Cg fill='none' stroke='%2342f305' stroke-opacity='0.055' stroke-width='2'%3E%3Cpolygon points='174.7,136.8 136.8,174.7 83.2,174.7 45.3,136.8 45.3,83.2 83.2,45.3 136.8,45.3 174.7,83.2'/%3E%3Crect x='258' y='52' width='116' height='80'/%3E%3Cline x1='258' y1='78' x2='374' y2='78'/%3E%3Cline x1='258' y1='104' x2='374' y2='104'/%3E%3Ccircle cx='105' cy='318' r='54'/%3E%3Cpolygon points='306,252 368,360 244,360'/%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(1100px 520px at 50% -8%, rgba(66,243,5,0.07), transparent 60%);
   color: var(--text);
   font-family: 'Inter', -apple-system, Helvetica, Arial, sans-serif;
   line-height: 1.6;
@@ -23,15 +27,18 @@ nav {
   padding: 14px 22px; border-bottom: 2px solid var(--red);
   background: var(--panel); position: sticky; top: 0; z-index: 10;
 }
-.brand { font-size: 26px; color: var(--text); text-decoration: none; }
+.brand { font-size: 26px; color: var(--text); text-decoration: none; display: flex; align-items: center; gap: 10px; }
 .brand span { color: var(--red); }
+.brand-logo { height: 30px; width: auto; display: block; }
 nav a.link { color: var(--muted); text-decoration: none; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; }
 nav a.link:hover, nav a.link.active { color: var(--gold); }
 
 /* Hero */
-.hero { padding: 70px 22px 50px; text-align: center; background: linear-gradient(180deg, #16181d 0%, var(--bg) 100%); }
+.hero { padding: 64px 22px 46px; text-align: center; }
 .hero h1 { font-size: clamp(42px, 8vw, 84px); line-height: 1; }
 .hero h1 span { color: var(--red); }
+.hero-logo { width: min(560px, 88vw); height: auto; filter: drop-shadow(0 0 34px rgba(66,243,5,0.35)); }
+.hero-sub { font-family: 'Bebas Neue', 'Arial Narrow', sans-serif; font-size: clamp(30px, 5vw, 48px); letter-spacing: 14px; text-indent: 14px; margin-top: 4px; }
 .hero p { max-width: 640px; margin: 14px auto 0; color: var(--muted); font-size: 18px; }
 
 /* Layout */
